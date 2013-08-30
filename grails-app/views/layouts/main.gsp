@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js"><!--<![endif]-->
+<html lang="en" class="no-js" ng-app="myApp">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,8 +9,18 @@
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 		
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}"  type="text/css">
-  		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}"  type="text/css">
+		<script type="text/javascript" src="${resource(dir: 'js/lib', file: 'angular.min.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js/lib', file: 'angular-resource.min.js')}"></script>
+		
+		<r:require modules="bootstrap"/>
+		<script type="text/javascript" src="${resource(dir: 'js/lib', file: 'angular.min.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js/lib', file: 'angular-resource.min.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'app.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'controllers.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'directives.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'filters.js')}"></script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'services.js')}"></script>
+		
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
@@ -25,6 +35,9 @@
 		      </div>
 		    </div>
 		  </div>
+		  
+		<div ng-view></div>
+		  
 		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>
