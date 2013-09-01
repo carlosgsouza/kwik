@@ -5,5 +5,5 @@
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/signup', {templateUrl: 'partials/signup.html', controller: 'SignupController'});
-    $routeProvider.otherwise({redirectTo: '/signup'});
+   // $routeProvider.otherwise({redirectTo: '/signup'});
   }]);
