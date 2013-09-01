@@ -1,0 +1,15 @@
+Eu, como cliente, quero me cadastrar no site utilizando meu e-mail e uma senha
+
+ACCEPTANCE CRITERIA
+- Ao entrar no portal do kwik, eu devo ser redirecionado para a página de criação de conta
+
+- O formulátio de criação de contas deve ter os seguintes itens:
+	- e-mail
+	- senha
+	- confirmação de senha
+	- botão de submissão
+
+- O botão de submit da tela de criação de contas deve ficar habilitado apenas quando meus campos estiverem preenchidos corretamente, ou seja
+	- e-mail está preenchido
+	- senha está preenchida
+	- confirmação da senha é igual a senha
