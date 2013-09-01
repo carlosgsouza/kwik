@@ -24,17 +24,4 @@ class User {
 		UserRole.findAllByUser(this).collect { it.role } as Set
 	}
 
-	def beforeInsert() {
-		encodePassword()
-	}
-
-	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
-	}
-
-	protected void encodePassword() {
-		password = springSecurityService.encodePassword(password)
-	}
 }

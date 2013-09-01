@@ -13,3 +13,7 @@ ACCEPTANCE CRITERIA
 	- e-mail está preenchido
 	- senha está preenchida
 	- confirmação da senha é igual a senha
+
+- Não deve ser possível criar um usuário já existente
+
+- A senha do usuário deve ser guardada criptografada
