@@ -8,6 +8,9 @@ function SignupController($scope) {
   	$scope.password = "";
   	$scope.passwordConfirmation = "";
   	
-  	$scope.notValid = true;//$scope.username.length > 0; // && $scope.password.length > 0 && $scope.passowrd == $scope.passwordConfirmation;
+  	$scope.notValid = function() {
+  		return true;
+  	} 
+  		
 }
 
