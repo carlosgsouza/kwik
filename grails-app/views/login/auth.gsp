@@ -23,7 +23,7 @@
 			  </div>
 			  <div class="control-group">
 			    <div class="controls">
-			      <button type="submit" id="submit" class="btn">Log in</button>
+			      <button ng-disabled="username.length==0 || password.length==0" type="submit" id="submit" class="btn">Log in</button>
 			    </div>
 			  </div>
 		</form>
