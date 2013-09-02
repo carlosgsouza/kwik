@@ -4,13 +4,8 @@
 
 
 function SignupController($scope) {
-	$scope.username = "up";
+	$scope.username = "";
   	$scope.password = "";
   	$scope.passwordConfirmation = "";
-  	
-  	$scope.notValid = function() {
-  		return true;
-  	} 
-  		
 }
 

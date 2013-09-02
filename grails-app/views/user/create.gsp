@@ -36,12 +36,12 @@
 		  <div class="control-group">
 		    <label class="control-label" for="passwordConfirmation">Password (confirmation)</label>
 		    <div class="controls">
-		      <input type='password' name='passwordConfirmation' id='passwordConfirmation' />
+		      <input ng-model="passwordConfirmation"  type='password' name='passwordConfirmation' id='passwordConfirmation' />
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <div class="controls">
-		      <button ng-disabled="{{notValid}}" type="submit" class="btn">Sign up</button>
+		      <button ng-disabled="!(username.length > 0 && password.length > 0 && password == passwordConfirmation)" type="submit" class="btn">Sign up</button>
 		    </div>
 		  </div>
 		</g:form>

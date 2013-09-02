@@ -42,15 +42,15 @@
 		    </div>
 		  </div>
 		  
-		<g:if test='${flash.message}'>
-			<div class="row">
-				<div class="span12">
-					<div class='alert alert-info'>${flash.message}</div>
-				</div>
-			</div>	
-		</g:if>
-		
 		<div class="container">
+			<g:if test='${flash.message}'>
+				<div class="row">
+					<div class="span12">
+						<div class='alert alert-info'>${flash.message}</div>
+					</div>
+				</div>	
+			</g:if>
+			
 			<g:layoutBody/>
 		</div>	
 		
