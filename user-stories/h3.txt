@@ -1,0 +1,13 @@
+Eu, como cliente, quero "resetar" a minha senha quando eu não me lembrar.
+
+CRITÉRIOS DE ACEITAÇÃO
+- Deve haver um link na página de login para que o usuário resete a sua senha. Ao clicar neste link, o usuário deve ser levado ao formulário de recuperação de senha
+
+- Formulário de Recuperação de senha
+	- Deve conter os seguintes itens
+		- username
+		- botão de confirmação
+	
+	- Caso o username exista, o usuário deve ser redirecionado para a página de login e uma mensagem contento a nova senha deve ser mostrada (nós confiamos nos usuários)
+	
+	- Caso o username não exista, uma mensagem de erro deve ser exibida

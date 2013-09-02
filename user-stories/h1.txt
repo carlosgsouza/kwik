@@ -1,6 +1,6 @@
 Eu, como cliente, quero me cadastrar no site utilizando meu e-mail e uma senha
 
-ACCEPTANCE CRITERIA
+CRITÉRIOS DE ACEITAÇÃO
 - Deve haver um link no portal para que um usuário possa criar a sua conta
 
 - O formulátio de criação de contas deve ter os seguintes itens:

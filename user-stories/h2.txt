@@ -1,0 +1,17 @@
+Eu, como cliente, quero me logar no meu cadastro através de uma página.
+
+CRITÉRIOS DE ACEITAÇÃO
+- Deve haver um link no portal para que um usuário possa logar em sua conta
+
+- O formulátio de login deve ter os seguintes itens:
+	- e-mail
+	- senha
+	- botão de submissão
+
+- O botão de submit da tela de criação de contas deve ficar habilitado apenas quando meus campos estiverem preenchidos corretamente, ou seja
+	- e-mail está preenchido
+	- senha está preenchida
+
+- Uma mensagem de erro deve ser exibida quando o usuário não conseguir logar no portal
+
+- Ao logar no portal, o usuário deve ser redirecionado para a página de administração da conta
