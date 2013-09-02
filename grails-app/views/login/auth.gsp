@@ -7,10 +7,6 @@
 <body>
 <div class="row">
 	<div class="span6" ng-app="myApp" ng-controller="SignupController" >
-		<g:if test='${flash.message}'>
-			<div class='login_message'>${flash.message}</div>
-		</g:if>
-
 		<form action='${postUrl}' method='POST' id='loginForm' class='form-horizontal' autocomplete='off'>
 			<div class="control-group">
 			    <label class="control-label" for="username">Email</label>

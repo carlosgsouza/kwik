@@ -28,7 +28,7 @@
 		<div class="navbar navbar-inverse">
 		    <div class="navbar-inner">
 		      <div class="container">
-		        <a class="brand" href="index.html"><!-- <span class="k">k</span>wi<span class="k">k</span> --></a>
+		        <a class="brand" href="<g:createLink uri="/" />">kwik</a>
 		        <ul class="nav">
 		        	<sec:ifNotLoggedIn>
 						<li><a href="<g:createLink controller="user" action="create" />">Sign up</a></li>
@@ -42,6 +42,13 @@
 		    </div>
 		  </div>
 		  
+		<g:if test='${flash.message}'>
+			<div class="row">
+				<div class="span12">
+					<div class='alert alert-info'>${flash.message}</div>
+				</div>
+			</div>	
+		</g:if>
 		<g:layoutBody/>
 		<g:javascript library="application"/>
 		<r:layoutResources />
