@@ -30,7 +30,13 @@
 		      <div class="container">
 		        <a class="brand" href="index.html"><!-- <span class="k">k</span>wi<span class="k">k</span> --></a>
 		        <ul class="nav">
-		          <li><a href="user/create">Sign up</a></li>
+		        	<sec:ifNotLoggedIn>
+						<li><a href="<g:createLink controller="user" action="create" />">Sign up</a></li>
+		          		<li><a href="<g:createLink controller="login" action="auth" />">Log in</a></li>	
+					</sec:ifNotLoggedIn>
+					<sec:ifLoggedIn>
+						<li><a href="<g:createLink controller="logout" />">Log out</a></li>
+					</sec:ifLoggedIn>	
 			    </ul>
 		      </div>
 		    </div>

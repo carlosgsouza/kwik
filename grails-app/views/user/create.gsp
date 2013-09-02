@@ -9,6 +9,9 @@
 <body>
 	<div class="row">
 	<div class="span6" ng-app="myApp" ng-controller="SignupController" >
+		<g:if test='${flash.message}'>
+			<div class='login_message'>${flash.message}</div>
+		</g:if>
 		<g:form class="form-horizontal" action="save">
 		  <div class="control-group">
 		    <label class="control-label" for="username">Email</label>

@@ -9,7 +9,14 @@
 		<h1>KwiK</h1>
 		<p>Welcome to KwiK</p>
 		<p>
-			<a href="user/create" class="btn btn-primary btn-large">Sign up</a>
+			<sec:ifNotLoggedIn>
+				<a href="<g:createLink controller="user" action="create" />" class="btn btn-primary btn-large">Sign up</a>
+				<a href="<g:createLink controller="login" action="auth" />" class="btn btn-primary btn-large">Log in</a>
+			</sec:ifNotLoggedIn>
+			<sec:ifLoggedIn>
+				<a href="<g:createLink controller="logout" />" class="btn btn-primary btn-large">Log out</a>
+			</sec:ifLoggedIn>
+			
 		</p>
 	</div>
 </body>
