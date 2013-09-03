@@ -50,7 +50,7 @@ class UserController extends AbstractS2UiController {
 				user.save()
 				
 				flash.message = "We trust you are in fact $user.username and thus we are reseting your password. Now it is '$newPassword'"
-			
+				redirect controller:"login", action: "auth"
 			}
 		}
 	}
