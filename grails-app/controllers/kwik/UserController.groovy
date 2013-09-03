@@ -20,8 +20,7 @@ class UserController extends AbstractS2UiController {
 	def save = {
 		def user = lookupUserClass().newInstance(params)
 		if (params.password) {
-			String salt = saltSource instanceof NullSaltSource ? null : params.username
-			user.password = springSecurityUiService.encodePassword(params.password, salt)
+			saltUserPassword(user)
 		}
 		if (!user.save(flush: true)) {
 			render view: 'create', model: [user: user, authorityList: sortedRoles()]
@@ -31,6 +30,29 @@ class UserController extends AbstractS2UiController {
 		addRoles(user)
 		flash.message = "User $user.username created! Please login and buy a lot of stuff."
 		redirect controller:"login", action: "auth"
+	}
+	
+	private saltUserPassword(User user) {
+		String salt = saltSource instanceof NullSaltSource ? null : user.username
+		user.password = springSecurityUiService.encodePassword(user.password, salt)
+	}
+	
+	def resetPassword = {
+		if(params.username) {
+			def user = User.findByUsername(params.username)
+			
+			if(!user) {
+				flash.message = "This user doesn't exist"
+			} else {
+				def newPassword = new Random().nextInt(999999).toString()
+				user.password = newPassword
+				saltUserPassword(user)
+				user.save()
+				
+				flash.message = "We trust you are in fact $user.username and thus we are reseting your password. Now it is '$newPassword'"
+			
+			}
+		}
 	}
 
 	protected void addRoles(user) {

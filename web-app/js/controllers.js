@@ -16,3 +16,7 @@ function LoginController($scope) {
 	$scope.usernameForgotten = "";
 }
 
+function ResetController($scope) {
+	$scope.username = "";
+}
+

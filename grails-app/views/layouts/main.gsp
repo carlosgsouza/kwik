@@ -32,7 +32,8 @@
 		        <ul class="nav">
 		        	<sec:ifNotLoggedIn>
 						<li><a href="<g:createLink controller="user" action="create" />">Sign up</a></li>
-		          		<li><a href="<g:createLink controller="login" action="auth" />">Log in</a></li>	
+		          		<li><a href="<g:createLink controller="login" action="auth" />">Log in</a></li>
+		          		<li><a href="<g:createLink controller="user" action="resetPassword" />">Reset my Password</a></li>	
 					</sec:ifNotLoggedIn>
 					<sec:ifLoggedIn>
 						<li><a href="<g:createLink controller="logout" />">Log out</a></li>
