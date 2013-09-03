@@ -21,6 +21,17 @@ function ResetController($scope) {
 }
 
 function AddressController($scope) {
+	$scope.zip = "";
+	$scope.street = "";
+	$scope.number = "";
+	$scope.city = "";
+	$scope.state = "";
+	$scope.country = "";
 	
+	$scope.getAddress = function() {
+		if($scope.zip.length == 5) {
+			$scope.street = "cardeal";
+		}
+	}
 }
 

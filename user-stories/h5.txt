@@ -1,0 +1,6 @@
+Eu, como analista de negocio, gostaria que quando o cliente digitar o CEP, seja preenchido o logradouro, bairro, cidade e estado
+
+CRITÉRIOS DE ACEITAÇÃO
+- Na tela de cadastro de endereco, quando o usuario digitar o cep, todos os outros campos, exceto numero, devem ser preenchidos
+
+- Quando os campos forem preenchidos a pagina nao deve ser recarregada

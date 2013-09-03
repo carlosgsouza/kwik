@@ -25,7 +25,7 @@
 		  <div class="control-group">
 		    <label class="control-label" for="zip">ZIP</label>
 		    <div class="controls">
-		      <input ng-model="zip" type='text' name='zip' id='zip' autocomplete="on"/>
+		      <input ng-change="getAddress()" ng-model="zip" type='text' name='zip' id='zip' autocomplete="on"/>
 		    </div>
 		  </div>
 		  <div class="control-group">
