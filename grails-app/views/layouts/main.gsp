@@ -36,6 +36,7 @@
 		          		<li><a href="<g:createLink controller="user" action="resetPassword" />">Reset my Password</a></li>	
 					</sec:ifNotLoggedIn>
 					<sec:ifLoggedIn>
+		          		<li><a href="<g:createLink controller="address" />">Address</a></li>	
 						<li><a href="<g:createLink controller="logout" />">Log out</a></li>
 					</sec:ifLoggedIn>	
 			    </ul>

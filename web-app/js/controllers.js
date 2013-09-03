@@ -20,3 +20,7 @@ function ResetController($scope) {
 	$scope.username = "";
 }
 
+function AddressController($scope) {
+	
+}
+

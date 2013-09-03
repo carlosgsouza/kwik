@@ -1,17 +1,15 @@
 package kwik
 
-import grails.converters.JSON
 import grails.plugins.springsecurity.ui.AbstractS2UiController
 import grails.util.GrailsNameUtils
 
 import org.codehaus.groovy.grails.plugins.springsecurity.NullSaltSource
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-import org.springframework.dao.DataIntegrityViolationException
 
 class UserController extends AbstractS2UiController {
 	def saltSource
 	def userCache
-
+	
 	def create = {
 		def user = lookupUserClass().newInstance(params)
 		[user: user, authorityList: sortedRoles()]
@@ -54,7 +52,7 @@ class UserController extends AbstractS2UiController {
 			}
 		}
 	}
-
+	
 	protected void addRoles(user) {
 		String upperAuthorityFieldName = GrailsNameUtils.getClassName(
 			SpringSecurityUtils.securityConfig.authority.nameField, null)

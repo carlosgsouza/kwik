@@ -1,0 +1,20 @@
+H4. Eu, como cliente, quero cadastrar o meu endereço no site
+
+CRITÉRIOS DE ACEITAÇÃO
+- Quando o usuário estiver logado, o item de gerenciamento de conta deve aparecer no menu
+
+- Ao clicar no item de gerenciamento da conta, o usuário deve ser direcionado para um formátio de cadastro de endereço com os seguintes campos
+	- CEP
+	- Rua
+	- Número
+	- Bairro
+	- Cidade
+	- Estado
+	- País
+	- Salvar
+	
+- O botão salvar só deve aparecer quando todos os campos estiverem preenchidos
+	
+- Se algum endereço já estiver cadastrado no site, ele deve aparecer preenchido na tela
+
+- Ao salvar, o usuário deve receber uma mensagem de confirmação e permanecer na tela de edição da conta	
