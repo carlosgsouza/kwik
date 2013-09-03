@@ -1,6 +1,7 @@
 package kwik
 
-import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.JSON
+import groovyx.net.http.RESTClient
 
 class AddressController {
 
@@ -40,6 +41,18 @@ class AddressController {
 
         flash.message = getVeryHilariousMessage(address)
     }
+	
+	def fill() {
+		try {
+			def correiosApi = new RESTClient('http://correiosapi.apphb.com/cep/')
+			def r = correiosApi.get path:params.cep
+			
+			response.status = 200
+			render r.data as JSON 
+		} catch(IOException e) {
+			response.status = 404
+		}		
+	}
 	
 	def getVeryHilariousMessage(address) {
 		"""
