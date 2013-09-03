@@ -14,4 +14,4 @@ CRITÉRIOS DE ACEITAÇÃO
 
 - Uma mensagem de erro deve ser exibida quando o usuário não conseguir logar no portal
 
-- Ao logar no portal, o usuário deve ser redirecionado para a página de administração da conta
+- Ao logar no portal, o usuário deve ser redirecionado para a página principal
