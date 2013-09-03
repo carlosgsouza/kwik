@@ -5,9 +5,10 @@
 </head>
 
 <body>
-<div class="row">
-	<div class="span6" ng-app="myApp" ng-controller="SignupController" >
+<div class="row" ng-app="myApp" ng-controller="LoginController" >
+	<div class="span5">
 		<form action='${postUrl}' method='POST' id='loginForm' class='form-horizontal' autocomplete='off'>
+			<legend>Log in and buy stuff</legend>
 			<div class="control-group">
 			    <label class="control-label" for="username">Email</label>
 			    <div class="controls">
@@ -28,7 +29,27 @@
 			  </div>
 		</form>
 	</div>
+	
+	
+	<div class="span5">
+		<form action='reset' method='POST' id='resetForm' class='form-horizontal' autocomplete='off'>
+			<legend>Forgot your password?</legend>
+			<div class="control-group">
+			    <label class="control-label" for="username">Email</label>
+			    <div class="controls">
+			      <input ng-model="usernameForgotten" type='text' name='j_username' id='username' autocomplete="on"/>
+			    </div>
+			  </div>
+
+			  <div class="control-group">
+			    <div class="controls">
+			      <button ng-disabled="usernameForgotten.length==0" type="submit" id="submit" class="btn">Forgot my password</button>
+			    </div>
+			  </div>
+		</form>
+	</div>
 </div>
+
 <script type='text/javascript'>
 	<!--
 	(function() {

@@ -12,5 +12,7 @@ function SignupController($scope) {
 function LoginController($scope) {
 	$scope.username = "";
   	$scope.password = "";
+
+	$scope.usernameForgotten = "";
 }
 
