@@ -9,3 +9,10 @@ function SignupController($scope) {
   	$scope.passwordConfirmation = "";
 }
 
+function LoginController($scope) {
+	$scope.username = "";
+  	$scope.password = "";
+
+	$scope.usernameForgotten = "";
+}
+
