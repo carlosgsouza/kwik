@@ -25,37 +25,38 @@
 		  <div class="control-group">
 		    <label class="control-label" for="zip">ZIP</label>
 		    <div class="controls">
-		      <input ng-change="getAddress()" ng-model="zip" type='text' name='zip' id='zip' autocomplete="on"/>
+		      <input ng-change="getAddress()" ng-model="zip" type='text' name='zip' id='zip' autocomplete="on" required />
+		      <span ng-hide="valid" class="help-inline">Invalid zip code</span>
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="street">Street</label>
 		    <div class="controls">
-		      <input ng-model="street" type='text' name='street' id='street' />
+		      <input ng-model="street"  disabled="disabled" type='text' name='street' id='street' />
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="number">number</label>
 		    <div class="controls">
-		      <input ng-model="number" type='text' name='number' id='number' />
+		      <input ng-model="number"  type='text' name='number' id='number' required />
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="city">city</label>
 		    <div class="controls">
-		      <input ng-model="city" type='text' name='city' id='city' />
+		      <input ng-model="city" disabled="disabled" type='text' name='city' id='city' />
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="state">state</label>
 		    <div class="controls">
-		      <input ng-model="state" type='text' name='state' id='state' />
+		      <input ng-model="state" disabled="disabled" type='text' name='state' id='state' />
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="country">country</label>
 		    <div class="controls">
-		      <input ng-model="country" type='text' name='country' id='country' />
+		      <input ng-model="country" disabled="disabled"  type='text' name='country' id='country' />
 		    </div>
 		  </div>
 		  <div class="control-group">

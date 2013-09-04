@@ -21,6 +21,8 @@ function ResetController($scope) {
 }
 
 function AddressController($scope, $http) {
+	$scope.valid = false;
+	
 	$scope.zip = "";
 	$scope.street = "";
 	$scope.number = "";
@@ -29,19 +31,24 @@ function AddressController($scope, $http) {
 	$scope.country = "";
 	
 	$scope.getAddress = function() {
+		$scope.valid = false;
+		
 		if($scope.zip.length == 8) {
 			$http({method: 'GET', url: 'fill/'+$scope.zip}).
 			  success(function(data, status, headers, config) {
-				  	$scope.street = data.logradouro;
+				  	$scope.valid = true;
+				  
+				  	$scope.street = data.street;
 					$scope.number = "";
-					$scope.city = data.cidade;
-					$scope.state = data.estado;
-					$scope.country = "Brasil";
+					$scope.city = data.city;
+					$scope.state = data.state;
+					$scope.country = data.country;
 			  }).
 			  error(function(data, status, headers, config) {
+				  $scope.valid = false;
 				  console.log("CEP Retrieval didn't work. Status=" + status);
 			  });
-		}
+		} 
 	}
 }
 

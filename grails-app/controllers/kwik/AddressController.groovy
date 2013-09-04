@@ -1,6 +1,7 @@
 package kwik
 
 import grails.converters.JSON
+import grails.plugins.springsecurity.Secured
 import groovyx.net.http.RESTClient
 
 class AddressController {
@@ -15,6 +16,7 @@ class AddressController {
 		springSecurityService.currentUser?.address
 	}
 	
+	@Secured(['ROLE_USER'])
     def index() {
 		def address = currentUserAddress
         
@@ -26,12 +28,16 @@ class AddressController {
         }
     }
 
+	@Secured(['ROLE_USER'])
     def create() {
         [addressInstance: new Address(params)]
     }
 
+	@Secured(['ROLE_USER'])
     def save() {
-        def address = new Address(params)
+		def address = new Address(getAddress(params.zip))
+		address.number = params.number;
+		
         if (!address.save(flush: true, failOnError:true)) {
             flash.message = "Something went wrong. Run for you life!!!!"
         }
@@ -42,14 +48,29 @@ class AddressController {
         flash.message = getVeryHilariousMessage(address)
     }
 	
+	private getAddress(zip) {
+		def correiosApi = new RESTClient('http://correiosapi.apphb.com/cep/')
+		def response = correiosApi.get path:zip
+		
+		def addressFromCorreios = response.data
+		
+		return [
+				zip : zip,
+				street : addressFromCorreios.logradouro,
+				city : addressFromCorreios.cidade,
+				state : addressFromCorreios.estado,
+				country : "Brasil"
+			]
+	}
+	
 	def fill() {
 		try {
-			def correiosApi = new RESTClient('http://correiosapi.apphb.com/cep/')
-			def r = correiosApi.get path:params.cep
+			def address =  getAddress(params.cep)
 			
 			response.status = 200
-			render r.data as JSON 
+			render address as JSON 
 		} catch(IOException e) {
+			e.printStackTrace()
 			response.status = 404
 		}		
 	}
