@@ -54,14 +54,7 @@ class UserController extends AbstractS2UiController {
 	}
 	
 	protected void addRoles(user) {
-		String upperAuthorityFieldName = GrailsNameUtils.getClassName(
-			SpringSecurityUtils.securityConfig.authority.nameField, null)
-
-		for (String key in params.keySet()) {
-			if (key.contains('ROLE') && 'on' == params.get(key)) {
-				lookupUserRoleClass().create user, lookupRoleClass()."findBy$upperAuthorityFieldName"(key), true
-			}
-		}
+		UserRole.create(user, Role.findByAuthority("USER_ROLE"))
 	}
 
 	protected Map buildUserModel(user) {

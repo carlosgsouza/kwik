@@ -16,8 +16,11 @@ class AddressController {
 		springSecurityService.currentUser?.address
 	}
 	
-	@Secured(['ROLE_USER'])
     def index() {
+		if(!springSecurityService.currentUser) {
+			redirect controller:"login", action: "auth"
+		}
+		
 		def address = currentUserAddress
         
 		if (address) {
@@ -28,13 +31,19 @@ class AddressController {
         }
     }
 
-	@Secured(['ROLE_USER'])
     def create() {
+		if(!springSecurityService.currentUser) {
+			redirect controller:"login", action: "auth"
+		}
+		
         [addressInstance: new Address(params)]
     }
 
-	@Secured(['ROLE_USER'])
     def save() {
+		if(!springSecurityService.currentUser) {
+			redirect controller:"login", action: "auth"
+		}
+		
 		def address = new Address(getAddress(params.zip))
 		address.number = params.number;
 		

@@ -18,16 +18,21 @@
 			</sec:ifLoggedIn>
 		</p>
 	</div>
+	<div class='alert alert-warn'>Essa aplicação está executando em uma instância sob demanda da Amazon e será desligada no dia 7 de Setembro. Caso precise de mais tempo para analisá-la, por favor me avise.</div>
+	<div>
 		<h1>Perguntas e Respostas</h1>
 		
 		<h3>Como entro em contato caso tenha alguma dúvida sobre seu teste?</h3>
 		<p>Me mande um e-mail(<a mailto="carlosgsouza@gmail.com">carlosgsouza@gmail.com</a>)</p>
 		
 		<h3>Onde está o código fonte?</h3>
-		<p>Em minha <a href="https://github.com/carlosgsouza/kwik">conta no GitHub</a>. Por favor, me envie sua conta para que eu possa te dar permissão.</p>
+		<p>Em minha <a href="https://github.com/carlosgsouza/kwik">conta no GitHub</a>. Por favor, me envie sua conta para que eu possa te dar permissão de acesso.</p>
 
 		<h3>Onde seu teste está hospedado?</h3>
 		<p>Em uma pequena instância EC2 na Amazon Web Services</p>
+
+		<h3>Como executo sua aplicação?</h3>
+		<p>Com o grails 2.1.3 instalado em sua máquina, vá para a pasta do projeto e execute <i>grails run-app</i></p>
 
 		<h3>Qual é a arquitetura em alto nível da sua aplicação?</h3>
 		<p>
@@ -79,10 +84,6 @@
 				<li>Implementaria testes funcionais usando jasmine + grails-karma + angular
 			</ul>
 		</p>
-
-		
-	<div>
-	
 	</div>
 </body>
 </html>
