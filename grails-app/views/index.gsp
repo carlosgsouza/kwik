@@ -29,7 +29,7 @@
 		<p>Em minha <a href="https://github.com/carlosgsouza/kwik">conta no GitHub</a>. Por favor, me envie sua conta para que eu possa te dar permissão de acesso.</p>
 
 		<h3>Onde seu teste está hospedado?</h3>
-		<p>Em uma pequena instância EC2 na Amazon Web Services</p>
+		<p>Em uma instância EC2 na Amazon Web Services. Essa instância é muito pequena e deve apresentar desempenho ruim.</p>
 
 		<h3>Como executo sua aplicação?</h3>
 		<p>Com o grails 2.1.3 instalado em sua máquina, vá para a pasta do projeto e execute <i>grails run-app</i></p>
